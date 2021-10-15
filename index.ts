@@ -1,19 +1,16 @@
-import { run } from './ecs-docker';
+// import { runEc2WebServer } from './ec2-webserver';
+// import { runEcsDocker } from './ecs-docker';
+import { runTemplate } from './template';
 
-// // Create an AWS resource (S3 Bucket)
-// const bucket = new aws.s3.Bucket('my-bucket', {
-//   website: {
-//     indexDocument: 'index.html'
-//   }
-// });
+// Run the ECS Docker
+// const { frontEndUrl } = runEcsDocker();
+// export { frontEndUrl };
 
-// // Export the name of the bucket
-// export const bucketName = bucket.id;
+// Run the EC2 Web Sever
+// const ec2WebServerPromise = runEc2WebServer();
+// const result = ec2WebServerPromise.then(({ publicIp, publicHostname }) => [publicIp, publicHostname]);
+// export { result };
 
-// const bucketObject = new aws.s3.BucketObject('test.html', {
-//   bucket: bucket.id,
-//   source: new pulumi.asset.FileAsset('./s3Files/index.html')
-// });
-
-const { frontEndUrl } = run();
-export { frontEndUrl };
+// Run Template 
+const output = runTemplate();
+export { output };

@@ -1,7 +1,7 @@
 import * as awsx from '@pulumi/awsx';
 import * as pulumi from '@pulumi/pulumi';
 
-export const run = () => {
+export const runEcsDocker = () => {
 // Create a Network load balancer to listen for requests and route them to the container.
   const listener = new awsx.elasticloadbalancingv2.NetworkListener('nginx', {
     port: 80
